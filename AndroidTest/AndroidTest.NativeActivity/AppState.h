@@ -7,12 +7,12 @@ struct AppState {
 	const ASensor *accelerometerSensor;
 	ASensorEventQueue *sensorEventQueue;
 
-	int animating;
 	EGLDisplay display;
 	EGLSurface surface;
 	EGLContext context;
-	int32_t width;
-	int32_t height;
+	int32_t animating : 1;
+	int32_t width : 15;
+	int32_t height : 16;
 
 	CircularBuffer<Vec3f> acceleration;
 
@@ -123,6 +123,7 @@ struct AppState {
 				ASensorEventQueue_setEventRate(
 				    sensorEventQueue, accelerometerSensor, 1000 * 1000 / 120);
 			}
+			animating = true;
 			break;
 		case APP_CMD_LOST_FOCUS:
 			// When our app loses focus, we stop monitoring the accelerometer.
@@ -132,7 +133,7 @@ struct AppState {
 				                                accelerometerSensor);
 			}
 			// Also stop animating.
-			animating = 0;
+			animating = false;
 			Draw();
 			break;
 		}
