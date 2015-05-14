@@ -1,0 +1,6 @@
+BasedOnStyle: LLVM
+PointerBindsToType: false
+BreakBeforeBraces: Attach
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation

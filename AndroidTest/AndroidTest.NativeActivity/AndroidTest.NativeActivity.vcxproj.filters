@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="android_native_app_glue.h" />
+    <ClInclude Include="logging.h" />
+    <ClInclude Include="all.h" />
+    <ClInclude Include="AppState.h" />
+    <ClInclude Include="AppState.hpp" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Container.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="android_native_app_glue.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="build.cpp" />
+  </ItemGroup>
+</Project>
